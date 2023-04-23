@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CRUD PLUS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body>
+    <main>
+      <h1>CRUR </h1>
+      <div class="employpage"> 
+        <div class="formdata">
+          <form action="" id="form-data">
+            <div>
+              <label >Name</label>
+              <input type="text " name="name" id="name" placeholder="Employ Name" />
+              <p class="text-red error name-error"></p>
+            </div>
+            
+            <div>
+              <lable>Price</lable>
+              <input type="number " name="price" id="price" placeholder="Employ Price" />
+              <p class="text-red error price-error"></p>
+            </div>
+
+            <div>
+              <lable>Detail</lable>
+              <input type="text " name="detail" id="detail" placeholder="Employ Detail" />
+              <p class="text-red error detail-error"></p>
+            </div>
+            
+            <div>
+              <lable>Color</lable>
+              <input type="text " name="color" id="color" placeholder="Employ Color"/>
+              <p class="text-red error color-error"></p>
+            </div>
+
+            <div style="width:100%">
+              <button type="button" class="btn" id="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="display_table">
+          <table class="list" id="employeeList">
+            <thead>
+              <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Detail</td>
+                <td>Color</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              
+            
+            </tbody>
+          </table>
+        </div>
+      </div> 
+    </main>  
+  </body>
+  <script type="module" src="script.js"></script>
+</html>

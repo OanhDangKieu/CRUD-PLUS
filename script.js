@@ -29,12 +29,14 @@ class User {
       initseditHandle();
     }
   }
-  
-  let users = [];
+  // let c = a ?? b; if a== null || a == underfind c = b else c = a
+    function setUserTolocalStorage(users = []){
+      localStorage.users = JSON.stringify(users);
+    }
+  let users = localStorage?.['users'] ? JSON.parse(localStorage?.['users']) : [];
   let app = new App();
-  let userCreate = new User(0, 'Glasses', '30', 'abc', 'grey');
-  users.push(userCreate);
   app.renderUser(users);
+  setUserTolocalStorage(users);
   
   let submitBtn = document.querySelector('#submit');
   let editBtns = document.querySelectorAll('.btn-edit');
@@ -94,6 +96,7 @@ class User {
       app.renderUser(users);
       resetForm();
     }
+    setUserTolocalStorage(users)
   });
   function resetError() {
     document.querySelectorAll('.error').forEach((item) => (item.innerHTML = ''));
@@ -137,6 +140,7 @@ class User {
           // document.querySelector(`#row${id}`).remove();
           app.renderUser(users); // hien thi lai danh sach
         }
+        setUserTolocalStorage(users);
       });
     });
   }
